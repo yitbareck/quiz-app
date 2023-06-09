@@ -55,7 +55,13 @@ import WidgetsBrand from '../widgets/WidgetsBrand'
 import WidgetsDropdown from '../widgets/WidgetsDropdown'
 
 const Dashboard = () => {
-  const random = (min, max) => Math.floor(Math.random() * (max - min + 1) + min)
+  const random = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+
+  let user = localStorage.getItem("user");
+  if(user){
+    user = JSON.parse(user);
+    
+  }
 
   const progressExample = [
     { title: 'Visits', value: '29.703 Users', percent: 40, color: 'success' },

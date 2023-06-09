@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
-import { CSidebar, CSidebarBrand, CSidebarNav, CSidebarToggler } from '@coreui/react'
+import { CImage, CSidebar, CSidebarBrand, CSidebarNav, CSidebarToggler } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 
 import { AppSidebarNav } from './AppSidebarNav'
@@ -14,11 +14,30 @@ import 'simplebar/dist/simplebar.min.css'
 
 // sidebar nav config
 import navigation from '../_nav'
+import { useNavigate } from 'react-router-dom'
 
 const AppSidebar = () => {
   const dispatch = useDispatch()
   const unfoldable = useSelector((state) => state.sidebarUnfoldable)
   const sidebarShow = useSelector((state) => state.sidebarShow)
+  const navigate = useNavigate();
+
+  let user = localStorage.getItem("user");
+
+// if(user){
+//   user = JSON.parse(user);
+// }else{
+//   alert("no user");
+//   navigate("/login");
+// }
+// if(user){
+//   if(user.role == 'admin'){
+//     navigation.splice(4);
+//   }else if(user.role == 'student'){
+//     navigation.splice(1,3);
+//   }
+//   console.log(navigation);
+// }
 
   return (
     <CSidebar
@@ -30,8 +49,7 @@ const AppSidebar = () => {
       }}
     >
       <CSidebarBrand className="d-none d-md-flex" to="/">
-        <CIcon className="sidebar-brand-full" icon={logoNegative} height={35} />
-        <CIcon className="sidebar-brand-narrow" icon={sygnet} height={35} />
+         <CImage src="/Allama_Iqbal_Open_University_logo.png" width={100} height={100}/>
       </CSidebarBrand>
       <CSidebarNav>
         <SimpleBar>

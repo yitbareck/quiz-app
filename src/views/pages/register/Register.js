@@ -10,6 +10,7 @@ import {
   CInputGroup,
   CInputGroupText,
   CRow,
+  CFormSelect
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 import { cilLockLocked, cilUser } from '@coreui/icons'
@@ -45,7 +46,7 @@ const Register = () => {
                       autoComplete="new-password"
                     />
                   </CInputGroup>
-                  <CInputGroup className="mb-4">
+                  <CInputGroup className="mb-3">
                     <CInputGroupText>
                       <CIcon icon={cilLockLocked} />
                     </CInputGroupText>
@@ -55,6 +56,14 @@ const Register = () => {
                       autoComplete="new-password"
                     />
                   </CInputGroup>
+                  <CInputGroup className="mb-4">
+                  <CIcon icon={cilLockLocked} />
+                  <CFormSelect aria-label="Default select example">
+                <option>Select Role</option>
+                <option value="Admin">Admin</option>
+                <option value="Student">Student</option>
+              </CFormSelect>
+              </CInputGroup>
                   <div className="d-grid">
                     <CButton color="success">Create Account</CButton>
                   </div>
